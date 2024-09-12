@@ -4,10 +4,13 @@
  */
 package com.hms.model;
 
+import jakarta.persistence.Entity;
+
 /**
  *
  * @author USER
  */
+@Entity
 public abstract class LabTest {
     protected String title;
     protected double cost;
