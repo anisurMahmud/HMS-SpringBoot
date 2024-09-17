@@ -4,16 +4,13 @@ import com.hms.model.User;
 import com.hms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller //class is now controller
-@RequestMapping(path = "/user") //url start with /user
+@RequestMapping(path="/user") //url start with /user
+
 public class UserController {
-    @Autowired
+    @Autowired        //Makes beans, must learn more
 
     private UserRepository userRepository;
 
