@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired        //Makes beans, must learn more
 
+
     private UserRepository userRepository;
+
 
     @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam short age){
@@ -22,6 +24,7 @@ public class UserController {
         userRepository.save(newUser);
         return "Saved";
     }
+
 
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<User> getAllUsers(){
