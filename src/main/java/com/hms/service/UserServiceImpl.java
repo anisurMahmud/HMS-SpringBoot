@@ -1,5 +1,4 @@
 package com.hms.service;
-
 import com.hms.model.User;
 import com.hms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +24,5 @@ public class UserServiceImpl implements UserService{
     public User getUserById(long id) {
         return userRepository.findById(id).get();
     }
+
 }
