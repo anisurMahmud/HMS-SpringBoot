@@ -1,7 +1,14 @@
 package com.hms.service;
 
-import org.springframework.stereotype.Service;
+import com.hms.model.User;
 
-@Service
+
+
 public interface UserService {
+    void save(User newUser);
+
+    Iterable<User> findAll();
+
+    User getUserById(long id);
+
 }
