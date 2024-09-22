@@ -13,7 +13,12 @@ public class RadiologicalTest extends LabTest implements CostCalculation, Discou
     private String plateDimension;
     
     public RadiologicalTest(){}
-    
+
+    @Override
+    public boolean setIsAvailable() {
+        return false;
+    }
+
     public RadiologicalTest(String title,
                     double cost,
                     boolean isAvailable, String plateDimension){
@@ -27,7 +32,7 @@ public class RadiologicalTest extends LabTest implements CostCalculation, Discou
         String output = "Test name: "+this.getTitle()+ "\r\n"
                 + " Cost: "+this.getCost()+"\r\n"
                 + " Plate Dimension: "+this.plateDimension+"\r\n"
-                + " Availability: "+this.isIsAvailable();
+                + " Availability: "+this.getAvailable();
         return output;
     }
 //    void search(String title){
@@ -68,7 +73,7 @@ public class RadiologicalTest extends LabTest implements CostCalculation, Discou
     /**
      * @return the isAvailable
      */
-    public boolean isIsAvailable() {
+    public boolean getAvailable() {
         return isAvailable;
     }
 
@@ -83,7 +88,7 @@ public class RadiologicalTest extends LabTest implements CostCalculation, Discou
         String output = "Test name: "+this.getTitle()+ "\r\n"
                 + "Cost: "+this.getCost()+"\r\n"
                 + " Plate Dimension: "+this.plateDimension+"\r\n"
-                + "Availability: "+this.isIsAvailable();
+                + "Availability: "+this.getAvailable();
         return output;
     }
 
@@ -99,10 +104,6 @@ public class RadiologicalTest extends LabTest implements CostCalculation, Discou
 
 
 
-    @Override
-    public String returnLabTestInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     
 }

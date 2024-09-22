@@ -5,10 +5,13 @@ import com.hms.model.User;
 
 
 public interface UserService {
-    void save(User newUser);
+    public void save(User newUser);
 
-    Iterable<User> findAll();
+    public Iterable<User> findAll();
 
-    User getUserById(long id);
+    public User getUserById(long id);
 
+    public void deleteUserById(long id);
+
+    public User updateUserById(long id, User user);
 }

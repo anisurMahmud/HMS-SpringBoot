@@ -4,21 +4,42 @@
  */
 package com.hms.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  *
  * @author Anis
  */
-public class PathologicalTest extends LabTest implements CostCalculation, Discount {
-    
+@Entity
+public class PathologicalTest extends LabTest{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String reAgent;
     
     public PathologicalTest(String title,
                     double cost,
                     boolean isAvailable){ 
-        this.title = title;
-        this.cost = cost;
-        this.isAvailable = isAvailable;}
-    
+//        this.title = title;
+//        this.cost = cost;
+//        this.isAvailable = isAvailable;
+            super(title,cost,isAvailable);
+            }
+
+    public PathologicalTest() {
+
+    }
+
+    @Override
+    public boolean setIsAvailable() {
+        return false;
+    }
+
     public PathologicalTest(String title,
                     double cost,
                     boolean isAvailable,
@@ -64,36 +85,30 @@ public class PathologicalTest extends LabTest implements CostCalculation, Discou
      * @return the isAvailable
      */
     @Override
-    public boolean isIsAvailable() {
+    public boolean getAvailable() {
         return isAvailable;
     }
 
-    /**
-     * @param isAvailable the isAvailable to set
-     */
-    public void setIsAvailable(boolean isAvailable) {
-        this.isAvailable = isAvailable;
-    }
 
 
-    public double calcTotal() {
-        return this.cost - (this.cost*discountPercentage)/100;
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-     
-    }
+//    public double calcTotal() {
+//        return this.cost - (this.cost*discountPercentage)/100;
+////        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//
+//    }
 
-    @Override
-    public double calcDue() {
-        return 0;
-    }
+//    @Override
+//    public double calcDue() {
+//        return 0;
+//    }
 
-    @Override
-    public String returnLabTestInfo() {
-        return "Test name: "+ this.getTitle()+ "\r\n"
-                + "Cost: "+ this.getCost()+"\r\n"
-                + "Availability: "+ this.isIsAvailable() + "\r\n"
-                + "ReAgent: " + this.getReagent();
-    }
+//    @Override
+//    public String returnLabTestInfo() {
+//        return "Test name: "+ this.getTitle()+ "\r\n"
+//                + "Cost: "+ this.getCost()+"\r\n"
+//                + "Availability: "+ this.getAvailable() + "\r\n"
+//                + "ReAgent: " + this.getReagent();
+//    }
 
 
 

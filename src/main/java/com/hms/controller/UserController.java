@@ -37,4 +37,16 @@ public class UserController {
     public @ResponseBody User getUserById(@PathVariable long id){
         return userService.getUserById(id);
     }
+
+    @DeleteMapping(path = "/user/{id}")
+    public @ResponseBody String deleteUserById(@PathVariable long id){
+        userService.deleteUserById(id);
+        return "Record deleted";
+    }
+
+    @PutMapping(path = "user/{id}")
+    public @ResponseBody User updateUserById(@PathVariable long id, @RequestBody User user){
+        return userService.updateUserById(id, user);
+    }
+
 }

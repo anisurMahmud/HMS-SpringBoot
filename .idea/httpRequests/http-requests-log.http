@@ -1,3 +1,53 @@
+POST http://localhost:1010/user/add?name=6fEgLPEc&age=77
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-22T151906.500.json
+
+###
+
+GET http://localhost:1010/user/all
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-22T151747.200.json
+
+###
+
+POST http://localhost:1010/user/add?name=bYcLaoR1&age=54
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-22T151619.500.json
+
+###
+
+POST http://localhost:1010/user/add?name=IZVFhMOA&age=71Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-22T151557.500.json
+
+###
+
+POST http://localhost:1010/user/add?name=K2ijB_Hb&age=65Content-Type: application/x-www-form-urlencoded
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-22T151432.500.json
+
+###
+
 GET http://localhost:1010/user/all
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.1
 Accept-Encoding: br, deflate, gzip, x-gzip
