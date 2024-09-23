@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserService{
         if(Objects.nonNull(user.getName()) && !"".equalsIgnoreCase(user.getName())) {
             userToUpdate.setName(user.getName());
         }
-
-        if(Objects.nonNull(user.getAge()) && !"".equalsIgnoreCase(String.valueOf(user.getAge()))) {
-            userToUpdate.setName(user.getName());
+//Objects.nonNull(user.getAge()) && !"".equalsIgnoreCase(String.valueOf(user.getAge())) //works for integer or string but not short data type
+        else if(user.getAge()>0) {
+            userToUpdate.setAge(user.getAge());
         }
 
         return userRepository.save(userToUpdate);
