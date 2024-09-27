@@ -4,4 +4,6 @@ import com.hms.model.Medicine;
 
 public interface MedicineService {
    public Medicine save(Medicine medicine);
+
+   public Iterable<Medicine> findAll();
 }

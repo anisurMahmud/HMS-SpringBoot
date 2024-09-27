@@ -15,4 +15,9 @@ public class MedicineServiceImpl implements MedicineService {
     public Medicine save(Medicine medicine) {
         return medicineRepository.save(medicine);
     }
+
+    @Override
+    public Iterable<Medicine> findAll() {
+        return medicineRepository.findAll();
+    }
 }

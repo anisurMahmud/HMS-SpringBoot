@@ -4,10 +4,7 @@ import com.hms.model.Medicine;
 import com.hms.service.MedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(path = "/meds")
@@ -19,5 +16,10 @@ public class MedicineController {
     @PostMapping(path = "/add")
     public @ResponseBody Medicine addMedicine(@RequestBody Medicine medicine) {
         return medicineService.save(medicine);
+    }
+
+    @GetMapping(path = "/allmeds")
+    public @ResponseBody Iterable<Medicine> getAllMedicines() {
+        return medicineService.findAll();
     }
 }
