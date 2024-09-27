@@ -48,9 +48,6 @@ public class UserController {
     public @ResponseBody User updateUserById(@PathVariable long id, @RequestBody User user){
         return userService.updateUserById(id, user);
     }
-    @GetMapping(path = "/html")
-    public String html(){
-        return "file";
-    }
+
 
 }
