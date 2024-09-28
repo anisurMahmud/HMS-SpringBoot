@@ -9,11 +9,14 @@ import lombok.Setter;
 
 @Entity
 @Getter
-@Setter
 public class Medicine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Setter
     private String name;
+    @Setter
+    private String type;
+    @Setter
     private int stock;
 }
