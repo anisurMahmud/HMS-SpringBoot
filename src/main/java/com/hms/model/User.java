@@ -5,42 +5,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+
 //import lombok.NoArgsConstructor;
 //
 //@NoArgsConstructor
 @Getter
 @Entity
 public class User {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Setter
+    @NonNull
     private String name;
+    @Setter
     private short age;
 
-    public User() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public short getAge() {
-        return age;
-    }
-
-    public void setAge(short age) {
-        this.age = age;
-    }
 }

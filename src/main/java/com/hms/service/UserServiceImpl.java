@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService{
     @Override
     public User updateUserById(long id, User user) {
         User userToUpdate = userRepository.findById(id).get();
-
-        if(Objects.nonNull(user.getName()) && !"".equalsIgnoreCase(user.getName())) {
+//Objects.nonNull(user.getName())
+        if(!"".equalsIgnoreCase(user.getName())) {
             userToUpdate.setName(user.getName());
         }
 //Objects.nonNull(user.getAge()) && !"".equalsIgnoreCase(String.valueOf(user.getAge())) //works for integer or string but not short data type
