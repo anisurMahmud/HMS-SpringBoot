@@ -1,12 +1,11 @@
 package com.hms.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+
+import java.util.List;
 
 //import lombok.NoArgsConstructor;
 //
@@ -25,5 +24,8 @@ public class User {
     private short age;
     @Setter
     private String sex;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<VisitHistory> visitHistory;
 
 }

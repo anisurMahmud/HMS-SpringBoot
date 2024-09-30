@@ -26,7 +26,7 @@ public class VisitHistoryController {
     public @ResponseBody List<VisitHistory> getAllVisitHistory() {
         return visitHistoryService.getAllVisitHistory();
     }
-    
+
     @GetMapping(path = "/{id}")
     public @ResponseBody VisitHistory getVisitHistoryById(@PathVariable int id) {
         return visitHistoryService.getVisitHistoryById(id);
