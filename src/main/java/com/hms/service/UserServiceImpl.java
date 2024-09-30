@@ -44,6 +44,9 @@ public class UserServiceImpl implements UserService{
         else if(user.getAge()>0) {
             userToUpdate.setAge(user.getAge());
         }
+        else if(Objects.nonNull(user.getSex()) && !"".equalsIgnoreCase(user.getSex())) {
+            userToUpdate.setSex(user.getSex());
+        }
 
         return userRepository.save(userToUpdate);
     }

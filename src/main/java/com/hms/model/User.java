@@ -23,5 +23,7 @@ public class User {
     private String name;
     @Setter
     private short age;
+    @Setter
+    private String sex;
 
 }
