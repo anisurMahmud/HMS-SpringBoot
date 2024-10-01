@@ -15,11 +15,12 @@ public class VisitHistory {
     private int id;
     @Setter
     private Date date;
-
+    @Setter
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Setter
     @ManyToMany
     @JoinTable(
             name = "history_medicine",
