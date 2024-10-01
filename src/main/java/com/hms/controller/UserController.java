@@ -17,13 +17,17 @@ public class UserController {
 
 
 
+//    @PostMapping(path="/add") // Map ONLY POST Requests
+////    public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam short age){
+////        User newUser = new User();
+////        newUser.setName(name);
+////        newUser.setAge(age);
+////        userService.save(newUser);
+////        return "Saved";
+////    }
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewUser(@RequestParam String name, @RequestParam short age){
-        User newUser = new User();
-        newUser.setName(name);
-        newUser.setAge(age);
-        userService.save(newUser);
-        return "Saved";
+    public @ResponseBody User addUser(@RequestBody User user) {
+        return userService.addUser(user);
     }
 
 
