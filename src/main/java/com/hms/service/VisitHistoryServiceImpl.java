@@ -9,6 +9,9 @@ import com.hms.repository.VisitHistoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class VisitHistoryServiceImpl implements VisitHistoryService {
@@ -25,16 +28,20 @@ public class VisitHistoryServiceImpl implements VisitHistoryService {
         this.medicineRepository = medicineRepository;
     }
 
+
     @Override
     public VisitHistory addVisitHistory(VisitHistory visitHistory) {
         User user = userRepository.findById(visitHistory.getUser().getId())
                 .orElseThrow(()-> new RuntimeException("User Not Found"));
-        for(Medicine medicine : visitHistory.getMedicines()) {
-            medicineRepository.findById(medicine.getId())
-                    .orElseThrow(()->new RuntimeException("Medicine Not Found"));
-        }
+//        for(Medicine medicine : visitHistory.getMedicines()) {
+//            medicineRepository.findById(medicine.getId())
+//                    .orElseThrow(()->new RuntimeException("Medicine Not Found"));
+//        }
+
+        Iterable<Medicine> medicines = medicineRepository.findAllById(visitHistory.getMedicines().stream().map(Medicine::getId).toList());
+        Set<Medicine> medicineList = StreamSupport.stream(medicines.spliterator(),false).collect(Collectors.toSet());
         visitHistory.setUser(user);
-//        visitHistory.setMedicines();
+        visitHistory.setMedicines(medicineList);
         return visitHistoryRepository.save(visitHistory);
     }
 
