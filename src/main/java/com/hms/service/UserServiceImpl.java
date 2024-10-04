@@ -1,10 +1,14 @@
 package com.hms.service;
+import com.hms.dto.UserResponseDTO;
 import com.hms.model.User;
 import com.hms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -18,13 +22,28 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Iterable<User> findAll() {
-        return userRepository.findAll();
+    public List<UserResponseDTO> findAll() {
+        List<User> user = userRepository.findAll();
+        return user.stream().map(user1 -> {
+            UserResponseDTO userDTO = new UserResponseDTO();
+            userDTO.setId(user1.getId());
+            userDTO.setUsername(user1.getName());
+            userDTO.setSex(user1.getSex());
+            userDTO.setAge(user1.getAge());
+            return userDTO;
+        }).collect(Collectors.toList());
     }
 
     @Override
-    public User getUserById(long id) {
-        return userRepository.findById(id).get();
+    public UserResponseDTO getUserById(long id) {
+        User user = userRepository.findById(id).get();
+        UserResponseDTO userDTO = new UserResponseDTO();
+        userDTO.setId(user.getId());
+        userDTO.setUsername(user.getName());
+        userDTO.setSex(user.getSex());
+        userDTO.setAge(user.getAge());
+
+        return userDTO;
     }
 
     @Override

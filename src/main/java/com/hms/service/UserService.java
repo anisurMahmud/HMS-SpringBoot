@@ -1,15 +1,17 @@
 package com.hms.service;
 
+import com.hms.dto.UserResponseDTO;
 import com.hms.model.User;
 
+import java.util.List;
 
 
 public interface UserService {
     void save(User newUser);
 
-    Iterable<User> findAll();
+    List<UserResponseDTO> findAll();
 
-    User getUserById(long id);
+    UserResponseDTO getUserById(long id);
 
     void deleteUserById(long id);
 

@@ -1,9 +1,12 @@
 package com.hms.controller;
 
+import com.hms.dto.MedicineResponseDTO;
 import com.hms.model.Medicine;
 import com.hms.service.MedicineService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(path = "/meds")
@@ -35,7 +38,7 @@ public class MedicineController {
      */
 
     @GetMapping(path = "/allmeds")
-    public @ResponseBody Iterable<Medicine> getAllMedicines() {
+    public @ResponseBody List<MedicineResponseDTO> getAllMedicines() {
         // Call the service layer to fetch all medicines
         return medicineService.findAll();
     }
@@ -48,7 +51,7 @@ public class MedicineController {
      */
 
     @GetMapping(path = "/{id}")
-    public @ResponseBody Medicine getMedicineById(@PathVariable long id) {
+    public @ResponseBody MedicineResponseDTO getMedicineById(@PathVariable long id) {
         // Call the service layer to find a medicine by its ID
         return medicineService.findMedicineById(id);
     }
