@@ -1,5 +1,6 @@
 package com.hms.service;
 
+import com.hms.dto.VisitHistoryResponseDTO;
 import com.hms.model.VisitHistory;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public interface VisitHistoryService {
     VisitHistory addVisitHistory(VisitHistory visitHistory);
 
-    List<VisitHistory> getAllVisitHistory();
+    List<VisitHistoryResponseDTO> getAllVisitHistory();
 
-    VisitHistory getVisitHistoryById(int id);
+    VisitHistoryResponseDTO getVisitHistoryById(int id);
 }

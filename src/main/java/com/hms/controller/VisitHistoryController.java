@@ -1,5 +1,6 @@
 package com.hms.controller;
 
+import com.hms.dto.VisitHistoryResponseDTO;
 import com.hms.model.VisitHistory;
 import com.hms.service.VisitHistoryService;
 import org.springframework.stereotype.Controller;
@@ -23,12 +24,12 @@ public class VisitHistoryController {
     }
 
     @GetMapping(path = "/allrecs")
-    public @ResponseBody List<VisitHistory> getAllVisitHistory() {
+    public @ResponseBody List<VisitHistoryResponseDTO> getAllVisitHistory() {
         return visitHistoryService.getAllVisitHistory();
     }
 
     @GetMapping(path = "/{id}")
-    public @ResponseBody VisitHistory getVisitHistoryById(@PathVariable int id) {
+    public @ResponseBody VisitHistoryResponseDTO getVisitHistoryById(@PathVariable int id) {
         return visitHistoryService.getVisitHistoryById(id);
     }
 }
