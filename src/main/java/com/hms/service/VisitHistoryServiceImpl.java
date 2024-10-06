@@ -76,4 +76,9 @@ public class VisitHistoryServiceImpl implements VisitHistoryService {
 
         return responseDTO;
     }
+
+    @Override
+    public void deleteVisitHistoryById(int id) {
+        visitHistoryRepository.deleteById(id);
+    }
 }

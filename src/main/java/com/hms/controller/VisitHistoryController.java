@@ -32,4 +32,10 @@ public class VisitHistoryController {
     public @ResponseBody VisitHistoryResponseDTO getVisitHistoryById(@PathVariable int id) {
         return visitHistoryService.getVisitHistoryById(id);
     }
+
+    @DeleteMapping(path = "/{id}")
+    public @ResponseBody String deleteVisitHistoryById(@PathVariable int id) {
+        visitHistoryService.deleteVisitHistoryById(id);
+        return "Record Deleted";
+    }
 }
