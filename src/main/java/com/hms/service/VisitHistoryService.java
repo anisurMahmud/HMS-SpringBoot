@@ -11,4 +11,6 @@ public interface VisitHistoryService {
     List<VisitHistoryResponseDTO> getAllVisitHistory();
 
     VisitHistoryResponseDTO getVisitHistoryById(int id);
+
+    void deleteVisitHistoryById(int id);
 }
