@@ -1,15 +1,15 @@
 package com.hms.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping(path ="/")
 public class RootController {
     @GetMapping
     public String root() {
-        return null;
+        return "API Running and Deployed";
     }
 
 }
